@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar(){
+  buscar(gifs:string){
+    this.termino = gifs
     if (this.termino.length > 0) {
-      this.gifsService.buscar(this.termino)
+      this.gifsService.buscar(gifs)
           .subscribe(gifs => {
             console.log(gifs);
             this.listados = gifs.data;

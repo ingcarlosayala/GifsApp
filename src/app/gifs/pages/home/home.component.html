@@ -1,32 +1,26 @@
 <div class="container">
     <div class="row mt-4">
-        <div class="col">
-            <h1 class="text-center text-white">Gifs</h1>
-            <hr>
+        <div class="col-12">
+            <h1 class="text-center">Animation</h1>
+
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <form autocomplete="off" (ngSubmit)="buscar()">
-                <input type="text"
-                       class="form-control"
-                       name="termino"
-                       placeholder="Buscar..."
-                       [(ngModel)]="termino">
-            </form>
+            <app-formulario (OnEnter)="buscar($event)"></app-formulario>
         </div>
     </div>
 
     <div class="row mt-4 ">
         <div class=" col-sm-6 col-md-4 col-lg-3" *ngFor="let listado of listados">
-            <div class="card animate__animated animate__backInDown ">
-                <img [src]="listado.images.downsized_medium.url" class="card-img-top w-100" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{listado.title}}</h5>
-                  <p class="card-text">{{listado.username}}</p>
+                <div class="card animate__animated animate__backInDown ">
+                    <img [src]="listado.images.downsized_medium.url" class="card-img-top w-100" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{listado.title}}</h5>
+                    <p class="card-text">{{listado.username}}</p>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

@@ -1,1 +1,7 @@
-<p>formulario works!</p>
+<form autocomplete="off" (ngSubmit)="buscar()">
+    <input type="text"
+           class="form-control"
+           name="termino"
+           placeholder="Buscar..."
+           [(ngModel)]="termino">
+</form>
